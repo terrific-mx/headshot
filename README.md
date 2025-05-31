@@ -2,6 +2,8 @@
 
 A Laravel-based application that uses AI to generate professional headshots from user selfies.
 
+![Professional AI Headshot Generator](/assets/feature.webp)
+
 ## Installation
 
 1. Clone the repository
