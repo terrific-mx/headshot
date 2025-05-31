@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --radius-4xl: 2rem;
+
+    /* --color-zinc-50: var(--color-gray-50);
+    --color-zinc-100: var(--color-gray-100);
+    --color-zinc-200: var(--color-gray-200);
+    --color-zinc-300: var(--color-gray-300);
+    --color-zinc-400: var(--color-gray-400);
+    --color-zinc-500: var(--color-gray-500);
+    --color-zinc-600: var(--color-gray-600);
+    --color-zinc-700: var(--color-gray-700);
+    --color-zinc-800: var(--color-gray-800);
+    --color-zinc-900: var(--color-gray-900);
+    --color-zinc-950: var(--color-gray-950); */
+
+    --color-accent: var(--color-neutral-800);
+    --color-accent-content: var(--color-neutral-800);
+    --color-accent-foreground: var(--color-white);
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-white);
+        --color-accent-content: var(--color-white);
+        --color-accent-foreground: var(--color-neutral-800);
+    }
+}
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply  !mb-0 !leading-tight;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+/* \[:where(&)\]:size-4 {
+    @apply size-4;
+} */
+
+@keyframes move-x {
+  0% {
+    transform: translateX(var(--move-x-from));
+  }
+  100% {
+    transform: translateX(var(--move-x-to));
+  }
+}
+
+.filepond--item {
+    @apply overflow-hidden rounded-lg! m-2!;
+    width: calc(33% - 1rem);
+}
+
+.filepond--drop-label label {
+    @apply text-sm! text-zinc-500! dark:text-zinc-300!;
+}
+
+.filepond--panel-root {
+    @apply bg-zinc-50! border-zinc-200! border! dark:bg-[color-mix(in_oklab,var(--color-zinc-400),transparent_90%)]! dark:border-[color-mix(in_oklab,var(--color-white),transparent_95%)]!;
+}
+
+.filepond--panel-top:after,
+.filepond--panel-bottom:before {
+    @apply bg-transparent!;
+}
+
+.filepond--file-info,
+.filepond--file .filepond--file-status,
+.filepond--root .filepond--credits {
+    @apply hidden!;
+}
