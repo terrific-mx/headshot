@@ -23,10 +23,22 @@ A Laravel-based application that uses AI to generate professional headshots from
 
 ## Features
 
-- **Selfie Upload**: Users upload selfies which are used as training data
-- **Model Training**: Uses `fal-ai/flux-lora-portrait-trainer` to create personalized AI models
-- **Personal Profile**: Collects personal details (age, ethnicity, height, weight, body type, eye color, gender, glasses) to improve generation quality
-- **Style Creation**: Users can create styles combining backdrops and outfits
-- **Photo Generation**: Uses `fal-ai/flux-lora` to generate professional headshots based on trained model and selected styles
-- **Batch Download**: Generated photos can be downloaded as a ZIP archive
-- **WorkOS Integration**: Secure authentication and session management
+### Selfie Upload & Model Training
+![User interface for uploading selfies to create AI headshots](/assets/create.webp)
+- Upload 15 selfies for training data
+- Uses `fal-ai/flux-lora-portrait-trainer` to create personalized AI models
+
+### Personal Profile
+![Form for entering personal details to improve AI headshot generation](/assets/profile.webp)
+- Collects detailed personal information:
+  - Age, ethnicity, height, weight
+  - Body type, eye color, gender
+
+### Style Creation
+![Interface for selecting backdrops and outfits to create headshot styles](/assets/styles.webp)
+- Combine professional backdrops and outfits
+
+### Photo Generation & Download
+- Uses `fal-ai/flux-lora` for high-quality headshots
+- Generates 10 variations per style
+- Batch download as ZIP archive
