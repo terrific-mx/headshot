@@ -59,7 +59,7 @@ new class extends Component {
                         </flux:avatar.group>
                         @endif
                         @if($headshot->hasStyles())
-                        <flux:text variant="strong">{{ __(':count delivered styles', ['count' => "{$headshot->styles()->count()}"]) }}</flux:text>
+                        <flux:text variant="strong">{{ __(':count styles', ['count' => "{$headshot->styles()->count()}"]) }}</flux:text>
                         @endif
                     </div>
                     <div class="flex gap-4">
